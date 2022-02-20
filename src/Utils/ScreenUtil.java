@@ -19,18 +19,35 @@ public class ScreenUtil {
 
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
+    /**
+     * Get Screen Dimensions
+     * @return 
+     */
     public Dimension getScreenSize() {
         return this.screenSize.getSize();
     }
     
+    /**
+     * Get the Screen Width
+     * @return 
+     */
     public int getScreenWidth(){
         return this.getScreenSize().width;
     }
     
+    /**
+     * Get the Screen Height
+     * @return 
+     */
     public int getScreenHeight() {
         return this.getScreenSize().height;        
     }
     
+    /**
+     * Convert provided Image Icon to the Screen Size.
+     * @param icon
+     * @return 
+     */
     public ImageIcon convertImageToScreenSize(ImageIcon icon){
         Image image = icon.getImage().getScaledInstance(this.getScreenWidth(), this.getScreenHeight(), Image.SCALE_SMOOTH);
         return new ImageIcon(image);
