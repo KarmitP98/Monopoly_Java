@@ -5,7 +5,7 @@
  */
 package Beans;
 
-import monopolyalpha.forms.Board;
+import Forms.Board;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 

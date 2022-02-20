@@ -5,8 +5,8 @@
  */
 package Beans;
 
-import monopolyalpha.forms.Board;
-import monopolyalpha.forms.PlayerSelect;
+import Forms.Board;
+import Forms.PlayerSelect;
 import java.awt.Color;
 import javax.swing.text.StyledDocument;
 

@@ -5,7 +5,7 @@
  */
 package monopolyalpha;
 
-import monopolyalpha.forms.Dashboard;
+import Forms.Dashboard;
 
 /**
  *
@@ -18,8 +18,8 @@ public class MonopolyAlpha {
      */
     public static void main(String[] args) {
 
-        SplashScreen splash = new SplashScreen();
-        splash.makeSplash();
+//        SplashScreen splash = new SplashScreen();
+//        splash.makeSplash();
 //       MusicPlayer.play();        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

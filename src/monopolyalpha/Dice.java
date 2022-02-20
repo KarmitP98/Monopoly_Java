@@ -4,8 +4,8 @@
  */
 package monopolyalpha;
 
-import monopolyalpha.forms.PlayerSelect;
-import monopolyalpha.forms.Dashboard;
+import Forms.PlayerSelect;
+import Forms.Dashboard;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;

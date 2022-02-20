@@ -6,8 +6,8 @@
 package Beans;
 
 import monopolyalpha.Dice;
-import monopolyalpha.forms.ThemeSelect;
-import monopolyalpha.forms.PlayerSelect;
+import Forms.ThemeSelect;
+import Forms.PlayerSelect;
 
 /**
  *

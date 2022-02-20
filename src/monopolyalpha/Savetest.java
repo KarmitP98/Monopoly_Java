@@ -6,8 +6,8 @@
 package monopolyalpha;
 
 import Beans.SaveBean;
-import monopolyalpha.forms.Board;
-import monopolyalpha.forms.PlayerSelect;
+import Forms.Board;
+import Forms.PlayerSelect;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import java.io.File;
