@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="dist/lib/AbsoluteLayout.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jl1.0.jar"/>
+	<classpathentry kind="lib" path="dist/lib/xstream-1.4.9.jar"/>
+	<classpathentry kind="lib" path="dist/MonopolyAlpha.jar"/>
+	<classpathentry kind="lib" path="jl1.0.jar"/>
+	<classpathentry kind="lib" path="xstream-1.4.9.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
