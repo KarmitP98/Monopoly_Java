@@ -11,6 +11,7 @@ import java.awt.Toolkit;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.Timer;
+import monopolyalpha.NickNames;
 
 /**
  *
@@ -195,8 +196,7 @@ public final class InitTest extends JFrame {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         sldPlayer = new javax.swing.JSlider();
         paneP1_P2 = new javax.swing.JPanel();
@@ -261,10 +261,8 @@ public final class InitTest extends JFrame {
         sldPlayer.setSnapToTicks(true);
         sldPlayer.setValue(2);
         sldPlayer.setInverted(true);
-        sldPlayer.addChangeListener(new javax.swing.event.ChangeListener()
-        {
-            public void stateChanged(javax.swing.event.ChangeEvent evt)
-            {
+        sldPlayer.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 sldPlayerStateChanged(evt);
             }
         });
@@ -274,17 +272,13 @@ public final class InitTest extends JFrame {
 
         comIconP1.setBackground(java.awt.Color.green);
         comIconP1.setFont(new java.awt.Font("Showcard Gothic", 1, 18)); // NOI18N
-        comIconP1.addItemListener(new java.awt.event.ItemListener()
-        {
-            public void itemStateChanged(java.awt.event.ItemEvent evt)
-            {
+        comIconP1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 comIconP1ItemStateChanged(evt);
             }
         });
-        comIconP1.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        comIconP1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comIconP1ActionPerformed(evt);
             }
         });
@@ -293,17 +287,13 @@ public final class InitTest extends JFrame {
         lblP1.setText("Player 1:");
 
         txtNameP1.setFont(new java.awt.Font("Showcard Gothic", 1, 18)); // NOI18N
-        txtNameP1.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusLost(java.awt.event.FocusEvent evt)
-            {
+        txtNameP1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
                 txtNameP1FocusLost(evt);
             }
         });
-        txtNameP1.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
+        txtNameP1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtNameP1KeyPressed(evt);
             }
         });
@@ -321,27 +311,21 @@ public final class InitTest extends JFrame {
         lblP2.setText("Player 2:");
 
         txtNameP2.setFont(new java.awt.Font("Showcard Gothic", 1, 18)); // NOI18N
-        txtNameP2.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusLost(java.awt.event.FocusEvent evt)
-            {
+        txtNameP2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
                 txtNameP2FocusLost(evt);
             }
         });
-        txtNameP2.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
+        txtNameP2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtNameP2KeyPressed(evt);
             }
         });
 
         comIconP2.setBackground(java.awt.Color.green);
         comIconP2.setFont(new java.awt.Font("Showcard Gothic", 1, 18)); // NOI18N
-        comIconP2.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        comIconP2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comIconP2ActionPerformed(evt);
             }
         });
@@ -352,10 +336,8 @@ public final class InitTest extends JFrame {
         btnRand1.setBackground(java.awt.Color.yellow);
         btnRand1.setFont(new java.awt.Font("Showcard Gothic", 1, 18)); // NOI18N
         btnRand1.setText("Random 1");
-        btnRand1.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        btnRand1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRand1MouseClicked(evt);
             }
         });
@@ -363,10 +345,8 @@ public final class InitTest extends JFrame {
         btnRand2.setBackground(java.awt.Color.yellow);
         btnRand2.setFont(new java.awt.Font("Showcard Gothic", 1, 18)); // NOI18N
         btnRand2.setText("Random 2");
-        btnRand2.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        btnRand2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRand2MouseClicked(evt);
             }
         });
@@ -443,36 +423,28 @@ public final class InitTest extends JFrame {
         lblTitle.setText("New Game");
         int w = (int) screenSize.getWidth();
         int h = (int) screenSize.getHeight();
-        if (w == 1024 && h == 768)
-        {
+        if (w == 1024 && h == 768){
             this.setContentPane(new JLabel(new ImageIcon("Icons/Miscellaneous/red1024-768.png")));
-        }else if (w == 1280 && h == 768)
-        {
+        }else if (w == 1280 && h == 768){
             this.setContentPane(new JLabel(new ImageIcon("Icons/Miscellaneous/red1280-768.png")));
-        } else if (w == 1280 && h == 1024)
-        {
+        } else if (w == 1280 && h == 1024){
             this.setContentPane(new JLabel(new ImageIcon("Icons/Miscellaneous/red1280-1024.png")));
-        } else if (w == 1366 && h == 768)
-        {
+        } else if (w == 1366 && h == 768){
             this.setContentPane(new JLabel(new ImageIcon("Icons/Miscellaneous/red1366-768.png")));
         }
 
         btnBack.setFont(new java.awt.Font("Showcard Gothic", 0, 14)); // NOI18N
         btnBack.setText("<Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
 
         btnNext.setFont(new java.awt.Font("Showcard Gothic", 0, 14)); // NOI18N
         btnNext.setText("Next>");
-        btnNext.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNextActionPerformed(evt);
             }
         });
@@ -484,10 +456,8 @@ public final class InitTest extends JFrame {
         comBonAmt.setFont(new java.awt.Font("Showcard Gothic", 0, 12)); // NOI18N
         comBonAmt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "$50", "$100", "$120" }));
         comBonAmt.setEnabled(false);
-        comBonAmt.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        comBonAmt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comBonAmtActionPerformed(evt);
             }
         });
@@ -495,20 +465,16 @@ public final class InitTest extends JFrame {
         rndSnake.setFont(new java.awt.Font("Showcard Gothic", 0, 18)); // NOI18N
         rndSnake.setText("Snake Eye Bonus");
         rndSnake.setEnabled(false);
-        rndSnake.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        rndSnake.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rndSnakeActionPerformed(evt);
             }
         });
 
         rndBail.setFont(new java.awt.Font("Showcard Gothic", 0, 18)); // NOI18N
         rndBail.setText("JAIL BAIL");
-        rndBail.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        rndBail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rndBailActionPerformed(evt);
             }
         });
@@ -516,10 +482,8 @@ public final class InitTest extends JFrame {
         comBailFee.setFont(new java.awt.Font("Showcard Gothic", 0, 12)); // NOI18N
         comBailFee.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "$100", "$150", "$200" }));
         comBailFee.setEnabled(false);
-        comBailFee.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        comBailFee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comBailFeeActionPerformed(evt);
             }
         });
@@ -594,10 +558,8 @@ public final class InitTest extends JFrame {
 
         comEGS.setFont(new java.awt.Font("Showcard Gothic", 1, 14)); // NOI18N
         comEGS.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Last player standing", "45 turns per player", "60 turns per player", "75 turns per player" }));
-        comEGS.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        comEGS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comEGSActionPerformed(evt);
             }
         });
@@ -606,27 +568,21 @@ public final class InitTest extends JFrame {
         comMoney.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "$ 500", "$ 1000", "$ 1500", "$ 2000" }));
         comMoney.setAutoscrolls(true);
         comMoney.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        comMoney.addItemListener(new java.awt.event.ItemListener()
-        {
-            public void itemStateChanged(java.awt.event.ItemEvent evt)
-            {
+        comMoney.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 comMoneyItemStateChanged(evt);
             }
         });
-        comMoney.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        comMoney.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comMoneyActionPerformed(evt);
             }
         });
 
         btnDice.setFont(new java.awt.Font("Showcard Gothic", 0, 18)); // NOI18N
         btnDice.setText("1 Dice");
-        btnDice.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnDice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDiceActionPerformed(evt);
             }
         });
@@ -708,27 +664,21 @@ public final class InitTest extends JFrame {
         lblP3.setText("Player 3:");
 
         txtNameP3.setFont(new java.awt.Font("Showcard Gothic", 1, 18)); // NOI18N
-        txtNameP3.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusLost(java.awt.event.FocusEvent evt)
-            {
+        txtNameP3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
                 txtNameP3FocusLost(evt);
             }
         });
-        txtNameP3.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
+        txtNameP3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtNameP3KeyPressed(evt);
             }
         });
 
         comIconP3.setBackground(java.awt.Color.green);
         comIconP3.setFont(new java.awt.Font("Showcard Gothic", 1, 18)); // NOI18N
-        comIconP3.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        comIconP3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comIconP3ActionPerformed(evt);
             }
         });
@@ -739,10 +689,8 @@ public final class InitTest extends JFrame {
         btnRand3.setBackground(java.awt.Color.yellow);
         btnRand3.setFont(new java.awt.Font("Showcard Gothic", 1, 18)); // NOI18N
         btnRand3.setText("Random 3");
-        btnRand3.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        btnRand3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRand3MouseClicked(evt);
             }
         });
@@ -792,27 +740,21 @@ public final class InitTest extends JFrame {
         lblP4.setText("Player 4:");
 
         txtNameP4.setFont(new java.awt.Font("Showcard Gothic", 1, 18)); // NOI18N
-        txtNameP4.addFocusListener(new java.awt.event.FocusAdapter()
-        {
-            public void focusLost(java.awt.event.FocusEvent evt)
-            {
+        txtNameP4.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
                 txtNameP4FocusLost(evt);
             }
         });
-        txtNameP4.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
+        txtNameP4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtNameP4KeyPressed(evt);
             }
         });
 
         comIconP4.setBackground(java.awt.Color.green);
         comIconP4.setFont(new java.awt.Font("Showcard Gothic", 1, 18)); // NOI18N
-        comIconP4.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        comIconP4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comIconP4ActionPerformed(evt);
             }
         });
@@ -823,17 +765,13 @@ public final class InitTest extends JFrame {
         btnRand4.setBackground(java.awt.Color.yellow);
         btnRand4.setFont(new java.awt.Font("Showcard Gothic", 1, 18)); // NOI18N
         btnRand4.setText("Random 4");
-        btnRand4.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
+        btnRand4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnRand4MouseClicked(evt);
             }
         });
-        btnRand4.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnRand4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRand4ActionPerformed(evt);
             }
         });

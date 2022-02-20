@@ -48,7 +48,6 @@ public class AboutDialogfrm extends javax.swing.JFrame {
 
         lblAbout.setFont(new java.awt.Font("Showcard Gothic", 1, 24)); // NOI18N
         this.setContentPane(new JLabel(new ImageIcon("Icons/Miscellaneous/about form green pattern.png")));
-        lblAbout.setForeground(new java.awt.Color(0, 0, 0));
         lblAbout.setText("<html><center>Monopoly is trademark of Hasbro<br>"
             + "in which it holds all rights reserved towards all names<br>"
             + " and convention used in this game.<br><br>This game was coded"

@@ -8,6 +8,7 @@ package monopolyalpha;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JCheckBox;
+import monopolyalpha.Properties_Data;
 
 /**
  *

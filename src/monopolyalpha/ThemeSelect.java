@@ -7,6 +7,8 @@ package monopolyalpha;
 
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import monopolyalpha.Canada_Data;
+import monopolyalpha.SuperHero_Data;
 
 /**
  *
@@ -47,8 +49,7 @@ public class ThemeSelect extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         btnCanada = new javax.swing.JButton();
         btnSuper = new javax.swing.JButton();
@@ -61,30 +62,24 @@ public class ThemeSelect extends javax.swing.JFrame {
 
         btnCanada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopolyalpha/themeCanadanpr.png"))); // NOI18N
         btnCanada.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/monopolyalpha/themeCanada.png"))); // NOI18N
-        btnCanada.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnCanada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCanadaActionPerformed(evt);
             }
         });
 
         btnSuper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopolyalpha/themeSupernpr.png"))); // NOI18N
         btnSuper.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/monopolyalpha/themeSuper.png"))); // NOI18N
-        btnSuper.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnSuper.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSuperActionPerformed(evt);
             }
         });
 
         btnGeneric.setIcon(new javax.swing.ImageIcon(getClass().getResource("/monopolyalpha/themeGenericnpr.png"))); // NOI18N
         btnGeneric.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/monopolyalpha/themeGeneric.png"))); // NOI18N
-        btnGeneric.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        btnGeneric.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGenericActionPerformed(evt);
             }
         });
@@ -95,10 +90,8 @@ public class ThemeSelect extends javax.swing.JFrame {
 
         back.setFont(new java.awt.Font("Showcard Gothic", 0, 14)); // NOI18N
         back.setText("BACK");
-        back.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
             }
         });

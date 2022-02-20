@@ -6,6 +6,7 @@ package monopolyalpha;
 
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import monopolyalpha.Properties_Data;
 
 /**
  *

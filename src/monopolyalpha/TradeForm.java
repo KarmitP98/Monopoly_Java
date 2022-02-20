@@ -230,7 +230,6 @@ public class TradeForm extends javax.swing.JFrame {
 
         chkMon1.setFont(new java.awt.Font("Showcard Gothic", 0, 18)); // NOI18N
         chkMon1.setText("Money");
-        chkMon1.setOpaque(false);
         chkMon1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkMon1ActionPerformed(evt);
@@ -239,7 +238,6 @@ public class TradeForm extends javax.swing.JFrame {
 
         chkMon2.setFont(new java.awt.Font("Showcard Gothic", 0, 18)); // NOI18N
         chkMon2.setText("Money");
-        chkMon2.setOpaque(false);
         chkMon2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkMon2ActionPerformed(evt);
@@ -292,9 +290,7 @@ public class TradeForm extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(chkMon1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(txtMon1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 0, 0)))
+                                .addComponent(txtMon1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(txtMon2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(chkMon2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))))
