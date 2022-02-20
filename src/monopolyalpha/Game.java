@@ -9,7 +9,6 @@ package monopolyalpha;
  *
  * @author karmi
  */
-public class Game
-  {
-    
-  }
+public class Game {
+
+}

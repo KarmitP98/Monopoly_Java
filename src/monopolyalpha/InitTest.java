@@ -16,13 +16,12 @@ import javax.swing.Timer;
  *
  * @author Harsh, Karmit, Haard, Neel(barely)
  */
-public final class InitTest extends JFrame
-  {
+public final class InitTest extends JFrame {
 
     //Initialize piece name and image variables   
     public static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     public static String theme;
-    public static int startmoney, dicenum = 1, bonusmoney, jailfee, counter, pCount=0, w, h, i, EGS;
+    public static int startmoney, dicenum = 1, bonusmoney, jailfee, counter, pCount = 0, w, h, i, EGS;
     public static String piecep1, piecep2, piecep3, piecep4, piecep5, piecep6, piecep7, piecep8;
     public static ImageIcon i1, i2, i3, i4, i5, i6, i7, i8;
     public static ArrayList<ImageIcon> images = new ArrayList<>();
@@ -39,8 +38,7 @@ public final class InitTest extends JFrame
     public static JLabel[] plicons = new JLabel[4];
     public static Boolean snake = false, jail = false;
 
-    public InitTest()
-      {
+    public InitTest() {
         datatransfer();
         initComponents();
         combosetting();
@@ -49,10 +47,9 @@ public final class InitTest extends JFrame
         imagesetting();
         setup();
         btnNext.setMultiClickThreshhold(2000);
-      }
+    }
 
-    public void setup()
-      {
+    public void setup() {
         plnames[0] = txtNameP1;
         plnames[1] = txtNameP2;
         plnames[2] = txtNameP3;
@@ -61,10 +58,9 @@ public final class InitTest extends JFrame
         plicons[1] = lblPiece2;
         plicons[2] = lblPiece3;
         plicons[3] = lblPiece4;
-      }
+    }
 
-    public void imagesetting()
-      {
+    public void imagesetting() {
         images.add(0, null);
         images.add(1, i1);
         images.add(2, i2);
@@ -74,32 +70,25 @@ public final class InitTest extends JFrame
         images.add(6, i6);
         images.add(7, i7);
         images.add(8, i8);
-      }
+    }
 
-    public void combosetting()
-      {
-        comIconP1.setModel(new javax.swing.DefaultComboBoxModel(new String[]
-          {
+    public void combosetting() {
+        comIconP1.setModel(new javax.swing.DefaultComboBoxModel(new String[]{
             pieces[0], pieces[1], pieces[2], pieces[3], pieces[4], pieces[5], pieces[6], pieces[7], pieces[8]
-          }));
-        comIconP2.setModel(new javax.swing.DefaultComboBoxModel(new String[]
-          {
+        }));
+        comIconP2.setModel(new javax.swing.DefaultComboBoxModel(new String[]{
             pieces[0], pieces[1], pieces[2], pieces[3], pieces[4], pieces[5], pieces[6], pieces[7], pieces[8]
-          }));
-        comIconP3.setModel(new javax.swing.DefaultComboBoxModel(new String[]
-          {
+        }));
+        comIconP3.setModel(new javax.swing.DefaultComboBoxModel(new String[]{
             pieces[0], pieces[1], pieces[2], pieces[3], pieces[4], pieces[5], pieces[6], pieces[7], pieces[8]
-          }));
-        comIconP4.setModel(new javax.swing.DefaultComboBoxModel(new String[]
-          {
+        }));
+        comIconP4.setModel(new javax.swing.DefaultComboBoxModel(new String[]{
             pieces[0], pieces[1], pieces[2], pieces[3], pieces[4], pieces[5], pieces[6], pieces[7], pieces[8]
-          }));
-      }
+        }));
+    }
 
-    public void datatransfer()
-      {
-        switch (ts.theme)
-          {
+    public void datatransfer() {
+        switch (ts.theme) {
             case "Canada":
                 ts.canth();
                 System.out.println("" + ts.theme);
@@ -112,7 +101,7 @@ public final class InitTest extends JFrame
                 ts.supth();
                 System.out.println("" + ts.theme);
                 break;
-          }
+        }
         this.theme = ts.theme;
         this.piecep1 = ts.piece1;
         this.piecep2 = ts.piece2;
@@ -139,13 +128,11 @@ public final class InitTest extends JFrame
         pieces[6] = piecep6;
         pieces[7] = piecep7;
         pieces[8] = piecep8;
-      }
+    }
 
-    public void setStartmoney()
-      {
+    public void setStartmoney() {
         int i = comMoney.getSelectedIndex();
-        switch (i)
-          {
+        switch (i) {
             case 0:
                 startmoney = 500;
                 break;
@@ -158,14 +145,12 @@ public final class InitTest extends JFrame
             case 3:
                 startmoney = 2000;
                 break;
-          }
-      }
+        }
+    }
 
-    public void setBonusmoney()
-      {
+    public void setBonusmoney() {
         int i = comBonAmt.getSelectedIndex();
-        switch (i)
-          {
+        switch (i) {
             case 0:
                 bonusmoney = 50;
                 break;
@@ -175,14 +160,12 @@ public final class InitTest extends JFrame
             case 2:
                 bonusmoney = 120;
                 break;
-          }
-      }
+        }
+    }
 
-    public void setBailfee()
-      {
+    public void setBailfee() {
         int i = comBailFee.getSelectedIndex();
-        switch (i)
-          {
+        switch (i) {
             case 0:
                 jailfee = 100;
                 break;
@@ -192,26 +175,23 @@ public final class InitTest extends JFrame
             case 2:
                 jailfee = 200;
                 break;
-          }
-      }
+        }
+    }
 
-    private void snakeEyeBonus()
-      {
-        if (dicenum == 1)
-          {
+    private void snakeEyeBonus() {
+        if (dicenum == 1) {
             btnDice.setText("2 Dice");
             dicenum = 2;
             rndSnake.setEnabled(true);
-          } else
-          {
+        } else {
             btnDice.setText("1 Dice");
             dicenum = 1;
             rndSnake.setSelected(false);
             rndSnake.setEnabled(false);
             lblBonAmt.setEnabled(false);
             comBonAmt.setEnabled(false);
-          }
-      }
+        }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -972,16 +952,16 @@ public final class InitTest extends JFrame
         int i = comIconP1.getSelectedIndex();
         lblPiece1.setDisabledIcon(images.get(i));
         indexes[0] = i;
-        System.out.println("InitTest: Icon 1:"+i);
+        System.out.println("InitTest: Icon 1:" + i);
         pliconduplicate(1);
     }//GEN-LAST:event_comIconP1ActionPerformed
-    
+
     private void comIconP2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_comIconP2ActionPerformed
     {//GEN-HEADEREND:event_comIconP2ActionPerformed
         int i = comIconP2.getSelectedIndex();
         lblPiece2.setDisabledIcon(images.get(i));
         indexes[1] = i;
-        System.out.println("InitTest: Icon 2:"+i);
+        System.out.println("InitTest: Icon 2:" + i);
         pliconduplicate(2);
     }//GEN-LAST:event_comIconP2ActionPerformed
 
@@ -990,7 +970,7 @@ public final class InitTest extends JFrame
         int i = comIconP3.getSelectedIndex();
         lblPiece3.setDisabledIcon(images.get(i));
         indexes[2] = i;
-        System.out.println("InitTest: Icon 3:"+i);
+        System.out.println("InitTest: Icon 3:" + i);
         pliconduplicate(3);
     }//GEN-LAST:event_comIconP3ActionPerformed
 
@@ -999,7 +979,7 @@ public final class InitTest extends JFrame
         int i = comIconP4.getSelectedIndex();
         lblPiece4.setDisabledIcon(images.get(i));
         indexes[3] = i;
-        System.out.println("InitTest: Icon 4:"+i);
+        System.out.println("InitTest: Icon 4:" + i);
         pliconduplicate(4);
     }//GEN-LAST:event_comIconP4ActionPerformed
 
@@ -1041,45 +1021,36 @@ public final class InitTest extends JFrame
     private void comIconP1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comIconP1ItemStateChanged
     }//GEN-LAST:event_comIconP1ItemStateChanged
 
-    public void setplayers()
-      {
+    public void setplayers() {
         setStartmoney();
         setBonusmoney();
         setBailfee();
-        if (rndSnake.isSelected())
-          {
+        if (rndSnake.isSelected()) {
             snake = true;
-          }
-        if (rndBail.isSelected())
-          {
+        }
+        if (rndBail.isSelected()) {
             jail = true;
-          }
-        EGS=comEGS.getSelectedIndex();
+        }
+        EGS = comEGS.getSelectedIndex();
         pCount = sldPlayer.getValue();
-        for (i = 0; i < pCount; i++)
-          {
+        for (i = 0; i < pCount; i++) {
             name[i] = plnames[i].getText();
             icon[i] = (ImageIcon) plicons[i].getDisabledIcon();
             startm[i] = startmoney;
-            if (snake == true)
-              {
+            if (snake == true) {
                 bonusm[i] = bonusmoney;
-              } else
-              {
+            } else {
                 bonusm[i] = 0;
-              }
-            if (jail == true)
-              {
+            }
+            if (jail == true) {
                 jailfeem[i] = jailfee;
-              } else
-              {
+            } else {
                 jailfeem[i] = 0;
-              }
+            }
             System.out.println("InitTest: Info:-" + i + " " + name[i] + " " + icon[i] + " " + startm[i] + "pCount: " + pCount);
-          }
+        }
         System.out.println("InitTest: Number of pCount: " + pCount);
-      }
-
+    }
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         setplayers();
@@ -1160,7 +1131,7 @@ public final class InitTest extends JFrame
 
     private void comEGSActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_comEGSActionPerformed
     {//GEN-HEADEREND:event_comEGSActionPerformed
-         EGS= comEGS.getSelectedIndex();
+        EGS = comEGS.getSelectedIndex();
     }//GEN-LAST:event_comEGSActionPerformed
 
     private void sldPlayerStateChanged(javax.swing.event.ChangeEvent evt)//GEN-FIRST:event_sldPlayerStateChanged
@@ -1170,11 +1141,9 @@ public final class InitTest extends JFrame
         reset();
     }//GEN-LAST:event_sldPlayerStateChanged
 
-    public final void checker()
-      {
+    public final void checker() {
         pCount = sldPlayer.getValue();
-        switch (pCount)
-          {
+        switch (pCount) {
             //If there are 2 players selected
             case 2:
                 paneP3.setVisible(false);
@@ -1190,189 +1159,156 @@ public final class InitTest extends JFrame
                 paneP3.setVisible(true);
                 PaneP4.setVisible(true);
                 break;
-          }
-      }
+        }
+    }
 
-    public void pliconduplicate(int plnum)
-      {
+    public void pliconduplicate(int plnum) {
 
-        switch (plnum)
-          {
+        switch (plnum) {
             case 1:
 
-                if (indexes[0] != 0)
-                  {
-                    if (indexes[0] == indexes[1] || indexes[0] == indexes[2] || indexes[0] == indexes[3])
-                      {
+                if (indexes[0] != 0) {
+                    if (indexes[0] == indexes[1] || indexes[0] == indexes[2] || indexes[0] == indexes[3]) {
                         lblPiece1.setDisabledIcon(null);
                         lblPiece1.revalidate();
                         comIconP1.setSelectedIndex(0);
                         JOptionPane.showMessageDialog(null, "Please select another piece for one of the players!");
-                      }
-                  }
+                    }
+                }
                 break;
             case 2:
-                if (indexes[1] != 0)
-                  {
-                    if (indexes[1] == indexes[0] || indexes[1] == indexes[2] || indexes[1] == indexes[3])
-                      {
+                if (indexes[1] != 0) {
+                    if (indexes[1] == indexes[0] || indexes[1] == indexes[2] || indexes[1] == indexes[3]) {
                         lblPiece2.setDisabledIcon(null);
                         lblPiece2.revalidate();
                         comIconP2.setSelectedIndex(0);
                         JOptionPane.showMessageDialog(null, "Please select another piece for one of the players!");
-                      }
-                  }
+                    }
+                }
                 break;
             case 3:
-                if (indexes[2] != 0)
-                  {
-                    if (indexes[2] == indexes[0] || indexes[2] == indexes[1] || indexes[2] == indexes[3])
-                      {
+                if (indexes[2] != 0) {
+                    if (indexes[2] == indexes[0] || indexes[2] == indexes[1] || indexes[2] == indexes[3]) {
                         lblPiece3.setDisabledIcon(null);
                         lblPiece3.revalidate();
                         comIconP3.setSelectedIndex(0);
                         JOptionPane.showMessageDialog(null, "Please select another piece for one of the players!");
-                      }
-                  }
+                    }
+                }
                 break;
             case 4:
-                if (indexes[3] != 0)
-                  {
-                    if (indexes[3] == indexes[0] || indexes[3] == indexes[1] || indexes[3] == indexes[2])
-                      {
+                if (indexes[3] != 0) {
+                    if (indexes[3] == indexes[0] || indexes[3] == indexes[1] || indexes[3] == indexes[2]) {
                         lblPiece4.setDisabledIcon(null);
                         lblPiece4.revalidate();
                         comIconP4.setSelectedIndex(0);
                         JOptionPane.showMessageDialog(null, "Please select another piece for one of the players!");
-                      }
-                  }
+                    }
+                }
                 break;
-          }
-      }
+        }
+    }
 
-    public void reset()
-      {
-        if (pCount == 2)
-          {
+    public void reset() {
+        if (pCount == 2) {
             comIconP3.setSelectedIndex(0);
             txtNameP3.setText(null);
             comIconP4.setSelectedIndex(0);
             txtNameP4.setText(null);
-          } else if (pCount == 3)
-          {
+        } else if (pCount == 3) {
             comIconP4.setSelectedIndex(0);
             txtNameP4.setText(null);
-          }
+        }
 
-      }
+    }
 
-    public void playernameduplicate(int plnum)
-      {
+    public void playernameduplicate(int plnum) {
         t1 = txtNameP1.getText();
         t2 = txtNameP2.getText();
         t3 = txtNameP3.getText();
         t4 = txtNameP4.getText();
-        if (t1.isEmpty() == true)
-          {
+        if (t1.isEmpty() == true) {
             t1 = "1";
-          }
-        if (t2.isEmpty() == true)
-          {
+        }
+        if (t2.isEmpty() == true) {
             t2 = "2";
-          }
-        if (t3.isEmpty() == true)
-          {
+        }
+        if (t3.isEmpty() == true) {
             t3 = "3";
-          }
-        if (t4.isEmpty() == true)
-          {
+        }
+        if (t4.isEmpty() == true) {
             t4 = "4";
-          }
+        }
 
-        switch (plnum)
-          {
+        switch (plnum) {
             case 1:
-                if (t1.equalsIgnoreCase(t2) || t1.equalsIgnoreCase(t3) || t1.equalsIgnoreCase(t4))
-                  {
+                if (t1.equalsIgnoreCase(t2) || t1.equalsIgnoreCase(t3) || t1.equalsIgnoreCase(t4)) {
                     JOptionPane.showMessageDialog(null, "Please enter another name! This name already taken!");
                     txtNameP1.setText(null);
 //                    t1 = null;
-                  }
+                }
                 break;
 
             case 2:
-                if (t2.equalsIgnoreCase(t1) || t2.equalsIgnoreCase(t3) || t2.equalsIgnoreCase(t4))
-                  {
+                if (t2.equalsIgnoreCase(t1) || t2.equalsIgnoreCase(t3) || t2.equalsIgnoreCase(t4)) {
                     JOptionPane.showMessageDialog(null, "Please enter another name! This name already taken!");
                     txtNameP2.setText(null);
 //                    t2 = null;
-                  }
+                }
                 break;
             case 3:
-                if (t3.equalsIgnoreCase(t2) || t3.equalsIgnoreCase(t1) || t3.equalsIgnoreCase(t4))
-                  {
+                if (t3.equalsIgnoreCase(t2) || t3.equalsIgnoreCase(t1) || t3.equalsIgnoreCase(t4)) {
                     JOptionPane.showMessageDialog(null, "Please enter another name! This name already taken!");
                     txtNameP3.setText(null);
 //                    t3 = null;
-                  }
+                }
                 break;
             case 4:
-                if (t4.equalsIgnoreCase(t1) || t4.equalsIgnoreCase(t2) || t4.equalsIgnoreCase(t3))
-                  {
+                if (t4.equalsIgnoreCase(t1) || t4.equalsIgnoreCase(t2) || t4.equalsIgnoreCase(t3)) {
                     JOptionPane.showMessageDialog(null, "Please enter another name! This name already taken!");
                     txtNameP4.setText(null);
 //                    t4 = null;
-                  }
+                }
                 break;
 
-          }
-      }
+        }
+    }
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[])
-      {
+    public static void main(String args[]) {
 
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try
-          {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-              {
-                if ("Nimbus".equals(info.getName()))
-                  {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                  }
-              }
-          } catch (ClassNotFoundException ex)
-          {
+                }
+            }
+        } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(InitTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          } catch (InstantiationException ex)
-          {
+        } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(InitTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          } catch (IllegalAccessException ex)
-          {
+        } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(InitTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          } catch (javax.swing.UnsupportedLookAndFeelException ex)
-          {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(InitTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          }
+        }
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable()
-          {
-            public void run()
-              {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
                 new StartScreenfrm().setVisible(true);
-              }
-          });
-      }
+            }
+        });
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PaneP4;
     private javax.swing.JButton btnBack;

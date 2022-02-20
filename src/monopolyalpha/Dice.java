@@ -39,7 +39,7 @@ public class Dice {
 //        j.setVisible(false);
 //    }
 
-    public static int rollDice(int num) {        
+    public static int rollDice(int num) {
         int roll = 0;
         String path = null;
         String theme = InitTest.theme;

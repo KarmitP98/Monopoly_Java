@@ -12,18 +12,15 @@ import java.util.Collections;
  *
  * @author karmi
  */
-public class jackpotMoney
-  {
+public class jackpotMoney {
 
     public ArrayList JackMoney = new ArrayList();
     public int i;
 
-    public jackpotMoney()
-      {
-        for (i = 0; i < 91; i++)
-          {
+    public jackpotMoney() {
+        for (i = 0; i < 91; i++) {
             JackMoney.add(i * 2);
-          }
+        }
         JackMoney.add(800);
         JackMoney.add(900);
         JackMoney.add(1000);
@@ -33,20 +30,18 @@ public class jackpotMoney
         JackMoney.add(3000);
         JackMoney.add(3000);
         JackMoney.add(10000);
-      }
+    }
 
-    public int Jack()
-      {
+    public int Jack() {
         Collections.shuffle(JackMoney);
         return (int) JackMoney.get(0);
-      }
-    
+    }
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args)
-      {
+    public static void main(String[] args) {
 
-      }
+    }
 
-  }
+}

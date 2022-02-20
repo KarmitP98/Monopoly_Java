@@ -13,19 +13,17 @@ import javax.swing.JCheckBox;
  *
  * @author karmi
  */
-public class HouseFrm extends javax.swing.JFrame
-  {
+public class HouseFrm extends javax.swing.JFrame {
 
-    int pl, turn, j = -1, money = 0, x = 0, y = 0;    
+    int pl, turn, j = -1, money = 0, x = 0, y = 0;
     Board bd;
     Properties_Data pd = new Properties_Data();
     public int[] propOwner = new int[36], nums = new int[36], sel = new int[36], propHouse = new int[36];
     public boolean[] propH = new boolean[36];
     public JCheckBox[] props = new JCheckBox[100];
 
-    public HouseFrm(int[] propOwner, boolean[] propH, int turn, int[] propHouse, Board board)
-      {
-          bd = board;
+    public HouseFrm(int[] propOwner, boolean[] propH, int turn, int[] propHouse, Board board) {
+        bd = board;
         pl = bd.players;
         this.turn = turn;
         initComponents();
@@ -34,16 +32,12 @@ public class HouseFrm extends javax.swing.JFrame
         this.propH = propH;
         this.propHouse = propHouse;
         addProps(turn);
-      }
+    }
 
-    public void addProps(int turn)
-      {
-        for (int i = 0; i < 36; i++)
-          {
-            if (propOwner[i] == turn)
-              {
-                if (propH[i] == true)
-                  {
+    public void addProps(int turn) {
+        for (int i = 0; i < 36; i++) {
+            if (propOwner[i] == turn) {
+                if (propH[i] == true) {
                     this.props[y] = new JCheckBox(bd.propName[i]);
                     this.paneprops.add(props[y]);
                     j++;
@@ -54,45 +48,40 @@ public class HouseFrm extends javax.swing.JFrame
 //                      {
 //                        props[y].setEnabled(false);
 //                      }
-                    this.props[y].addActionListener(new ActionListener()
-                      {
+                    this.props[y].addActionListener(new ActionListener() {
                         @Override
-                        public void actionPerformed(ActionEvent e)
-                          {
-                              if(propHouse[k]==4){
-                                  btnUpg.setEnabled(false);
-                              }
-                              if(propHouse[k]>=1){
-                                  btnDng.setEnabled(true);
-                              }else{
-                                  btnDng.setEnabled(false);
-                              }
+                        public void actionPerformed(ActionEvent e) {
+                            if (propHouse[k] == 4) {
+                                btnUpg.setEnabled(false);
+                            }
+                            if (propHouse[k] >= 1) {
+                                btnDng.setEnabled(true);
+                            } else {
+                                btnDng.setEnabled(false);
+                            }
                             updateMoney();
-                          }
-                      });
+                        }
+                    });
                     y++;
-                  }
-              }
-          }
-      }
+                }
+            }
+        }
+    }
 
-    public void updateMoney()
-      {
+    public void updateMoney() {
         pd.GetProp(bd.theme);
         money = 0;
-        for (int i = 0; i <= j; i++)
-          {
-            if (props[i].isSelected())
-              {
+        for (int i = 0; i <= j; i++) {
+            if (props[i].isSelected()) {
                 System.out.println("House:: Selected:" + i + " Number:" + nums[i] + " MOney:" + pd.prop[nums[i]].priceHouse);
                 sel[x] = i;
                 x++;
                 money += pd.prop[nums[i]].priceHouse;
 
-              }
-          }
+            }
+        }
         lblMoney.setText("$ " + money);
-      }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -226,87 +215,72 @@ public class HouseFrm extends javax.swing.JFrame
     private void btnUpgActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnUpgActionPerformed
     {//GEN-HEADEREND:event_btnUpgActionPerformed
         bd.money[turn] -= money;
-        bd.displayChangeS(this.turn,-(this.money));
-        for (int i = 0; i <= j; i++)
-          {
-            if (props[i].isSelected())
-              {
+        bd.displayChangeS(this.turn, -(this.money));
+        for (int i = 0; i <= j; i++) {
+            if (props[i].isSelected()) {
                 bd.propHouse[nums[i]]++;
                 props[i].setSelected(false);
                 updateMoney();
                 bd.houses[nums[i]].setIcon(bd.houseImg[bd.propHouse[nums[i]]]);
                 bd.houses[nums[i]].validate();
                 bd.houses[nums[i]].repaint();
-              }
-          }
+            }
+        }
         btnUpg.setEnabled(false);
     }//GEN-LAST:event_btnUpgActionPerformed
 
     private void btnDngActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDngActionPerformed
         // TODO add your handling code here:
         bd.money[turn] += money;
-        bd.displayChangeS(this.turn,(this.money));
-        for (int i = 0; i <= j; i++)
-          {
-            if (props[i].isSelected())
-              {
+        bd.displayChangeS(this.turn, (this.money));
+        for (int i = 0; i <= j; i++) {
+            if (props[i].isSelected()) {
                 bd.propHouse[nums[i]]--;
                 props[i].setSelected(false);
                 updateMoney();
                 bd.houses[nums[i]].setIcon(null);
                 bd.houses[nums[i]].validate();
                 bd.houses[nums[i]].repaint();
-              }
-          }
+            }
+        }
         btnDng.setEnabled(false);
     }//GEN-LAST:event_btnDngActionPerformed
-
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[])
-      {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try
-          {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
-              {
-                if ("Nimbus".equals(info.getName()))
-                  {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                  }
-              }
-          } catch (ClassNotFoundException ex)
-          {
+                }
+            }
+        } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(HouseFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          } catch (InstantiationException ex)
-          {
+        } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(HouseFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          } catch (IllegalAccessException ex)
-          {
+        } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(HouseFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          } catch (javax.swing.UnsupportedLookAndFeelException ex)
-          {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(HouseFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-          }
+        }
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable()
-          {
+        java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
-            public void run()
-              {
+            public void run() {
                 new StartScreenfrm().setVisible(true);
-              }
-          });
-      }
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnDng;
@@ -321,4 +295,4 @@ public class HouseFrm extends javax.swing.JFrame
     public javax.swing.JLabel lblnameP;
     public javax.swing.JPanel paneprops;
     // End of variables declaration//GEN-END:variables
-  }
+}

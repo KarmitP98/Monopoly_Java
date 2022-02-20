@@ -14,17 +14,17 @@ public class MonopolyAlpha {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args)  {
-        
-        Splash_Screen splash = new Splash_Screen();
-       splash.makeSplash();
+    public static void main(String[] args) {
+
+        SplashScreen splash = new SplashScreen();
+        splash.makeSplash();
 //       MusicPlayer.play();        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new StartScreenfrm().setVisible(true);
             }
-        });       
-       
+        });
+
     }
 
 }

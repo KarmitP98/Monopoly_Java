@@ -353,7 +353,6 @@ public class TradeForm extends javax.swing.JFrame {
     //        trades = fromTr.concat(toTr);
     //        return trades;
     //    }
-
     private void btnTrdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrdActionPerformed
         // TODO add your handling code here:
         int tradeFrom = board.turn;

@@ -122,7 +122,7 @@ public class BuyScreen extends javax.swing.JFrame {
 
     private void Dispose() {
         //Enable next button and close this screen
-       board.enableNext();
+        board.enableNext();
         this.dispose();
     }
     private void btnPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassActionPerformed

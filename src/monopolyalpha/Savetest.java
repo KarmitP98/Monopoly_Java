@@ -16,10 +16,10 @@ import javax.swing.ImageIcon;
  *
  * @author Harsh
  */
-
 public class Savetest {
-    public static void Save(String filename){
-         File f = new File("Saves");
+
+    public static void Save(String filename) {
+        File f = new File("Saves");
         if (!f.exists()) {
             f.mkdir();
         }
@@ -45,10 +45,11 @@ public class Savetest {
                 }
             }
         }
-    }    
-    public static void Load(String filename){
+    }
+
+    public static void Load(String filename) {
         XStream xstream = new XStream(new DomDriver());
-        Save_Data save = (Save_Data)xstream.fromXML(new File(filename));
+        Save_Data save = (Save_Data) xstream.fromXML(new File(filename));
         Board board;
         Board.theme = save.theme;
         Board.players = save.players;
@@ -88,6 +89,7 @@ public class Savetest {
         board = new Board(save.players, true);
         board.setVisible(true);
     }
+
     public static void main(String[] args) {
 //        Save_Data sg = new Save_Data();
 //        for (int i = 0; i < sg.names.length; i++) {

@@ -978,24 +978,20 @@ public class Board extends javax.swing.JFrame {
     public void checkPlayerMoney(int turn) {
         if (Game[turn] == true) {
             int prop = 0;
-            for(i=0;i<36;i++)
-            {
-                if(propOwner[i]==turn)
-                {
-                    prop+=propPrice[i];
+            for (i = 0; i < 36; i++) {
+                if (propOwner[i] == turn) {
+                    prop += propPrice[i];
                 }
             }
-            int tot=money[turn]+prop;
-            System.out.println("Turn::"+turn+" Money::"+money[turn]+" "+tot);
+            int tot = money[turn] + prop;
+            System.out.println("Turn::" + turn + " Money::" + money[turn] + " " + tot);
             if (plChancesLeft[turn] <= 0) {
                 System.out.println("Chances");
                 gameOver(turn);
-            }
-            else if (money[turn] < 0) {
+            } else if (money[turn] < 0) {
                 TradeForm tradeForm = new TradeForm(this);
                 tradeForm.setVisible(true);
-            }
-            else if (tot < 0) {
+            } else if (tot < 0) {
                 System.out.println("Money");
                 gameOver(turn);
             }
@@ -1155,7 +1151,7 @@ public class Board extends javax.swing.JFrame {
         appendS(name[turn] + " ", turn);
         addLog("just bought " + propName[cpos[turn]] + " for $ " + propPrice[cpos[turn]]);
         btnReBuy.setEnabled(false);
-        System.out.println("Player:"+turn+" TotMoney:"+totMoney[turn]);
+        System.out.println("Player:" + turn + " TotMoney:" + totMoney[turn]);
         checkPlayerMoney(turn);
     }
 
@@ -1169,7 +1165,7 @@ public class Board extends javax.swing.JFrame {
         numprop[turn]--;
         displayChangeSell(turn);
         btnReBuy.setEnabled(false);
-        System.out.println("Player:"+turn+" TotMoney:"+totMoney[turn]);
+        System.out.println("Player:" + turn + " TotMoney:" + totMoney[turn]);
         checkPlayerMoney(turn);
     }
 

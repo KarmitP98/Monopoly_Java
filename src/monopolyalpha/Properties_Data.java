@@ -270,7 +270,7 @@ public class Properties_Data {
 //        //======================================================================
 //  
 //      }
-    public void GetProp(String thm) {   
+    public void GetProp(String thm) {
         System.out.println(thm);
         switch (thm) {
             case "Canada": {

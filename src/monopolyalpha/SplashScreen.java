@@ -12,7 +12,7 @@ import javax.swing.*;
  *
  * @author Harsh
  */
-public class Splash_Screen {
+public class SplashScreen {
 
     public static void makeSplash() {
         JDialog logoDialog = new JDialog();
@@ -21,31 +21,31 @@ public class Splash_Screen {
         logoDialog.setSize(imageLabel.getWidth(), imageLabel.getHeight());
         logoDialog.setUndecorated(true);
         logoDialog.getRootPane().setOpaque(false);
-        logoDialog.getContentPane().setBackground(new Color (0, 0, 0, 0));
-        logoDialog.setBackground(new Color (0, 0, 0, 0));
+        logoDialog.getContentPane().setBackground(new Color(0, 0, 0, 0));
+        logoDialog.setBackground(new Color(0, 0, 0, 0));
         logoDialog.pack();
         logoDialog.setLocationRelativeTo(null);
         logoDialog.setVisible(true);
-                
+
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         logoDialog.setVisible(false);
-        
+
         JDialog gifDialog = new JDialog();
         JLabel splash = new JLabel(new ImageIcon("Splash-Gif.gif"));
         gifDialog.add(splash);
         gifDialog.setSize(splash.getWidth(), splash.getHeight());
         gifDialog.setUndecorated(true);
         gifDialog.getRootPane().setOpaque(false);
-        gifDialog.getContentPane().setBackground(new Color (0, 0, 0, 0));
-        gifDialog.setBackground(new Color (0, 0, 0, 0));
+        gifDialog.getContentPane().setBackground(new Color(0, 0, 0, 0));
+        gifDialog.setBackground(new Color(0, 0, 0, 0));
         gifDialog.pack();
         gifDialog.setLocationRelativeTo(null);
         gifDialog.setVisible(true);
-                
+
         try {
             Thread.sleep(4500);
         } catch (InterruptedException e) {

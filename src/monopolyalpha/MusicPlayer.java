@@ -32,14 +32,14 @@ public class MusicPlayer {
             ply = new AdvancedPlayer(bis);
             ply.setPlayBackListener(new PlaybackListener() {
                 @Override
-                public void playbackFinished(PlaybackEvent event){
-                    try{
-                    ply.play();                        
-                    }catch(JavaLayerException e){
-                        System.out.println("Error replaying file: "+ e);
+                public void playbackFinished(PlaybackEvent event) {
+                    try {
+                        ply.play();
+                    } catch (JavaLayerException e) {
+                        System.out.println("Error replaying file: " + e);
                     }
                 }
-});
+            });
         } catch (Exception e) {
             System.out.println("Problem playing file " + filename);
             System.out.println(e);

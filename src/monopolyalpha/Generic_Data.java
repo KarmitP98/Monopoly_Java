@@ -13,24 +13,24 @@ import javax.swing.ImageIcon;
  * @author neelm_000
  */
 public class Generic_Data {
-       
+
     Color purple = new Color(75, 0, 130);
     String propName, desc1, desc2;
-    int price,priceHouse, rent1, rent2, rent3, rent4, rentH;
-    public String chance[]= new String[16];
-    public String community[]= new String[16];
+    int price, priceHouse, rent1, rent2, rent3, rent4, rentH;
+    public String chance[] = new String[16];
+    public String community[] = new String[16];
     public Generic_Data property[] = new Generic_Data[36];
     public boolean buyable;
     public Color colour;
     public ImageIcon cardIcon;
     public String type;
-    
+
     public Generic_Data[] setProp() {
         //Initializing the object array.
         for (int i = 0; i < property.length; i++) {
             property[i] = new Generic_Data();
         }
-        
+
         property[0].propName = "Start";
         property[0].buyable = false;
         property[0].type = "ST";
@@ -252,7 +252,7 @@ public class Generic_Data {
         property[20].type = "N";
 
         //RBC
-        property[21].propName="Special";
+        property[21].propName = "Special";
         property[21].desc1 = "Rent = 25x roll & tax rebate";
         property[21].price = 325;
         property[21].colour = Color.WHITE;
@@ -342,7 +342,7 @@ public class Generic_Data {
         property[29].type = "N";
 
         //CN TOWER
-        property[30].propName ="Special";  
+        property[30].propName = "Special";
         property[30].desc1 = "Rent = 25x roll, 50x ";
         property[30].desc2 = "roll if S.H.I.E.L.D. Headquarters is owned";
         property[30].price = 375;
@@ -369,7 +369,7 @@ public class Generic_Data {
         property[32].type = "N";
 
         //PARLIAMENT HILL
-        property[33].propName="Special";
+        property[33].propName = "Special";
         property[33].desc1 = "Rent = 25x roll, 50x roll ";
         property[33].desc2 = " if Watch Tower is owned";
         property[33].price = 375;
@@ -404,50 +404,48 @@ public class Generic_Data {
         property[35].cardIcon = new ImageIcon("Board Pictures/Canada/Tor Image.jpg");
         property[35].type = "N";
         //======================================================================
-        
+
         return property;
-      }
-            
-    public void getCards(){
-        //SETTING UP THE CARDS
-        
-        
-        //CHANCE CHEST
-        chance[0]="Advance to Go (Collect $200) ";
-        chance[1]="Bank error in your favor – collect $75 ";
-        chance[2]="Insurance fees – Pay $50 ";
-        chance[3]="Get out of jail free – this card may be kept until needed, or sold ";
-        chance[4]="Holiday Fund matures - Receive $100";
-        chance[5]="It is your birthday Collect $10 from each player ";
-        chance[6]="Blue Jays opening night – collect $50 from every player for opening night seats ";
-        chance[7]="Income Tax refund – collect $20 ";
-        chance[8]="Life Insurance Matures – collect $100 ";
-        chance[9]="Pay Hospital Room Fees of $100 ";
-        chance[10]="Pay University Fees of $50 ";
-        chance[11]="Receive $25 Consultancy Fee ";
-        chance[12]="You are assessed for street winter damage – $40 per house, $115 per hotel ";
-        chance[13]="You have won second prize in a poutine eating contest– collect $10 ";
-        chance[14]="You inherit $100";
-        chance[15]="From sale of stock you get $50 ";
-        
-        
-        //COMMUNITY CHEST
-        community[0]="Advance to Go (Collect $200)";
-        community[1]="Advance to Windsor";
-        community[2]="Advance token to CN Tower";
-        community[3]="Advance token to CNR";
-        community[4]="Advance to St. John's – if you pass Go, collect $200";
-        community[5]="Bank pays you dividend of $50";
-        community[6]="Get out of Jail free – this card may be kept until needed, or traded/sold";
-        community[7]="Go back 3 spaces";
-        community[8]="Go directly to Jail – do not pass Go, do not collect $200";
-        community[9]="Make shingle repairs on all your property – for each house pay $25 – for each hotel $100";
-        community[10]="Pay poor tax of $15";
-        community[11]="Take a trip to Timmies – if you pass Go collect $200";
-        community[12]="Take a walk on the Niagara Falls – advance token to Niagara Falls";
-        community[13]="You have been elected chairman of the board – pay each player $50";
-        community[14]="You win a curling tournanment – collect $150";
-        community[15]="You have won a hockey game - collect $100";
     }
-    
+
+    public void getCards() {
+        //SETTING UP THE CARDS
+
+        //CHANCE CHEST
+        chance[0] = "Advance to Go (Collect $200) ";
+        chance[1] = "Bank error in your favor – collect $75 ";
+        chance[2] = "Insurance fees – Pay $50 ";
+        chance[3] = "Get out of jail free – this card may be kept until needed, or sold ";
+        chance[4] = "Holiday Fund matures - Receive $100";
+        chance[5] = "It is your birthday Collect $10 from each player ";
+        chance[6] = "Blue Jays opening night – collect $50 from every player for opening night seats ";
+        chance[7] = "Income Tax refund – collect $20 ";
+        chance[8] = "Life Insurance Matures – collect $100 ";
+        chance[9] = "Pay Hospital Room Fees of $100 ";
+        chance[10] = "Pay University Fees of $50 ";
+        chance[11] = "Receive $25 Consultancy Fee ";
+        chance[12] = "You are assessed for street winter damage – $40 per house, $115 per hotel ";
+        chance[13] = "You have won second prize in a poutine eating contest– collect $10 ";
+        chance[14] = "You inherit $100";
+        chance[15] = "From sale of stock you get $50 ";
+
+        //COMMUNITY CHEST
+        community[0] = "Advance to Go (Collect $200)";
+        community[1] = "Advance to Windsor";
+        community[2] = "Advance token to CN Tower";
+        community[3] = "Advance token to CNR";
+        community[4] = "Advance to St. John's – if you pass Go, collect $200";
+        community[5] = "Bank pays you dividend of $50";
+        community[6] = "Get out of Jail free – this card may be kept until needed, or traded/sold";
+        community[7] = "Go back 3 spaces";
+        community[8] = "Go directly to Jail – do not pass Go, do not collect $200";
+        community[9] = "Make shingle repairs on all your property – for each house pay $25 – for each hotel $100";
+        community[10] = "Pay poor tax of $15";
+        community[11] = "Take a trip to Timmies – if you pass Go collect $200";
+        community[12] = "Take a walk on the Niagara Falls – advance token to Niagara Falls";
+        community[13] = "You have been elected chairman of the board – pay each player $50";
+        community[14] = "You win a curling tournanment – collect $150";
+        community[15] = "You have won a hockey game - collect $100";
+    }
+
 }

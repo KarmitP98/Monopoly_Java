@@ -12,8 +12,7 @@ import javax.swing.ImageIcon;
  *
  * @author Neel, Harsh, Haard
  */
-public class SuperHero_Data
-  {
+public class SuperHero_Data {
 
     Color purple = new Color(75, 0, 130);
     public String p1 = "Captain America", desc1, desc2;
@@ -26,25 +25,23 @@ public class SuperHero_Data
     public ImageIcon i4 = new ImageIcon("Icons/Pieces/Super Heroes/4.png");
     String propName;
     int price, priceHouse, rent1, rent2, rent3, rent4, rentH;
-     public String chance[] = new String[16];
+    public String chance[] = new String[16];
     public String chanceActs[] = new String[16];
-    public int chanceVals[] = new int[16],chancePos[]=new int[16];
+    public int chanceVals[] = new int[16], chancePos[] = new int[16];
     public String comm[] = new String[16];
     public String commActs[] = new String[16];
-    public int commVals[] = new int[16],commPos[]=new int[16];
+    public int commVals[] = new int[16], commPos[] = new int[16];
     public SuperHero_Data property[] = new SuperHero_Data[36];
     public boolean buyable;
     public Color colour;
     public ImageIcon cardIcon;
     public String type;
 
-    public SuperHero_Data[] setProp()
-      {
+    public SuperHero_Data[] setProp() {
         //Initializing the object array.
-        for (int i = 0; i < property.length; i++)
-          {
+        for (int i = 0; i < property.length; i++) {
             property[i] = new SuperHero_Data();
-          }
+        }
         property[0].propName = "Start";
         property[0].buyable = false;
         property[0].type = "ST";
@@ -266,7 +263,7 @@ public class SuperHero_Data
         property[20].type = "N";
 
         //RBC
-        property[21].propName="Asgard's Nexus Portal";
+        property[21].propName = "Asgard's Nexus Portal";
         property[21].desc1 = "Rent = 25x roll & tax rebate";
         property[21].price = 325;
         property[21].colour = Color.WHITE;
@@ -356,7 +353,7 @@ public class SuperHero_Data
         property[29].type = "N";
 
         //CN TOWER
-        property[30].propName ="Avengers Base";  
+        property[30].propName = "Avengers Base";
         property[30].desc1 = "Rent = 25x roll, 50x ";
         property[30].desc2 = "roll if S.H.I.E.L.D. Headquarters is owned";
         property[30].price = 375;
@@ -383,7 +380,7 @@ public class SuperHero_Data
         property[32].type = "N";
 
         //PARLIAMENT HILL
-        property[33].propName="Arkhum Asylum";
+        property[33].propName = "Arkhum Asylum";
         property[33].desc1 = "Rent = 25x roll, 50x roll ";
         property[33].desc2 = " if Watch Tower is owned";
         property[33].price = 375;
@@ -418,117 +415,116 @@ public class SuperHero_Data
         property[35].cardIcon = new ImageIcon("Board Pictures/Superhero/superman Image.jpg");
         property[35].type = "N";
         //======================================================================
-        
-        return property;
-      }
 
-    public void getCards()
-      {
+        return property;
+    }
+
+    public void getCards() {
         //SETTING UP THE CARDS
 
         //CHANCE CHEST
         chance[0] = "Advance to Go (Collect $200) ";
-        chanceActs[0]="MSS";
-        chancePos[0]=36;
-        chanceVals[0]=200;
+        chanceActs[0] = "MSS";
+        chancePos[0] = 36;
+        chanceVals[0] = 200;
         chance[1] = "You have an infinity stone - Pay $75 ";
-        chanceActs[1]="$";
-        chanceVals[1]=-75;
+        chanceActs[1] = "$";
+        chanceVals[1] = -75;
         chance[2] = "You broke your superhero outfit – Pay $50 ";
-        chanceActs[2]="MSS";
-        chanceVals[2]=-50;
+        chanceActs[2] = "MSS";
+        chanceVals[2] = -50;
         chance[3] = "You stole Captain America's Shield - Go to Jail and do not collect $200 if you pass GO";
-        chanceActs[3]="M";
-        chancePos[3]=9;
+        chanceActs[3] = "M";
+        chancePos[3] = 9;
         chance[4] = "You saved the president - Receive $100";
-        chanceActs[4]="$";
-        chanceVals[4]=100;
+        chanceActs[4] = "$";
+        chanceVals[4] = 100;
         chance[5] = "You let the Joker run away, Pay each player $50 ";
-        chanceActs[5]="P$";
-        chanceVals[5]=-50;
+        chanceActs[5] = "P$";
+        chanceVals[5] = -50;
         chance[6] = "Stark Expo Premiere – Collect $100 ";
-        chanceActs[6]="$";
-        chanceVals[6]=100;
+        chanceActs[6] = "$";
+        chanceVals[6] = 100;
         chance[7] = "Free lifts from Iron Man – collect $20 ";
-        chanceActs[7]="$";
-        chanceVals[7]=20;
+        chanceActs[7] = "$";
+        chanceVals[7] = 20;
         chance[8] = "Wayne Enterprises Stock went up – collect $100 ";
-        chanceActs[8]="$";
-        chanceVals[8]=100;
+        chanceActs[8] = "$";
+        chanceVals[8] = 100;
         chance[9] = "You blew up the Collector's Hideout- Pay $100 ";
-        chanceActs[9]="$";
-        chanceVals[9]=-100;
+        chanceActs[9] = "$";
+        chanceVals[9] = -100;
         chance[10] = "You crash into Odin- Pay $50 ";
-        chanceActs[10]="$";
-        chanceVals[10]=-50;
+        chanceActs[10] = "$";
+        chanceVals[10] = -50;
         chance[11] = "Receive $25, the Joker is caught for now ";
-        chanceActs[11]="$";
-        chanceVals[11]=25;
+        chanceActs[11] = "$";
+        chanceVals[11] = 25;
         chance[12] = "You are the new king of Asgard – Pay $40 per house, $115 per hotel ";
-        chanceActs[12]="H";
-        chanceVals[12]=-25;
+        chanceActs[12] = "H";
+        chanceVals[12] = -25;
         chance[13] = "You beat Hulk in a demolition contest – collect $10 ";
-        chanceActs[13]="$";
-        chanceVals[13]=10;
+        chanceActs[13] = "$";
+        chanceVals[13] = 10;
         chance[14] = "You are the new CEO of Stark Industries- Collect $100";
-        chanceActs[14]="$";
-        chanceVals[14]=100;
+        chanceActs[14] = "$";
+        chanceVals[14] = 100;
         chance[15] = "You got cured by Dr. Bruce Banner - Pay $100 ";
-        chanceActs[15]="$";
-        chanceVals[15]=-100;
+        chanceActs[15] = "$";
+        chanceVals[15] = -100;
 
         //COMMUNITY CHEST
         comm[0] = "Advance to Go (Collect $200)";
-        commActs[0]="MSS";
-        commPos[0]=36;
-        commVals[0]=200;
+        commActs[0] = "MSS";
+        commPos[0] = 36;
+        commVals[0] = 200;
         comm[1] = "Advance to Wolverine";
-        commActs[1]="M";
-        commPos[1]=13;
+        commActs[1] = "M";
+        commPos[1] = 13;
         comm[2] = "Advance token to S.H.I.E.L.D. Headquarters";
-        commActs[2]="M";
-        commPos[2]=12;
+        commActs[2] = "M";
+        commPos[2] = 12;
         comm[3] = "Advance token to Arkham Asylum";
-        commActs[3]="M";
-        commPos[3]=33;
+        commActs[3] = "M";
+        commPos[3] = 33;
         comm[4] = "Advance to Thor – if you pass Go, collect $200";
-        commActs[4]="MMS";
-        commPos[4]=12;
-        commVals[4]=200;
+        commActs[4] = "MMS";
+        commPos[4] = 12;
+        commVals[4] = 200;
         comm[5] = "Bank pays you dividend of $50";
-        commActs[5]="$";
-        commVals[5]=50;
+        commActs[5] = "$";
+        commVals[5] = 50;
         comm[6] = "You defeated Ultron - Collect 100$";
-        commActs[6]="$";
-        commVals[6]=100;
+        commActs[6] = "$";
+        commVals[6] = 100;
         comm[7] = "Move 4 steps back!";
-        commActs[7]="MB";
-        commPos[7]=-4;
+        commActs[7] = "MB";
+        commPos[7] = -4;
         comm[8] = "You broke the Batmobile , go directly to Jail – Do not collect $200 if you pass GO";
-        commActs[8]="M";
-        commPos[8]=9;
+        commActs[8] = "M";
+        commPos[8] = 9;
         comm[9] = "The Avengers Tower got torn apart – for each house pay $25 – for each hotel $100";
-        commActs[9]="H";
-        commVals[9]=-25;
+        commActs[9] = "H";
+        commVals[9] = -25;
         comm[10] = "Hawkeye's kids are going to college- Help by paying  $25";
-        commActs[10]="$";
-        commVals[10]=25;
+        commActs[10] = "$";
+        commVals[10] = 25;
         comm[11] = "Take a trip to Asgard's Nexus Portal – if you pass Go collect $200";
-        commActs[11]="MMS";
-        commPos[11]=21;
-        commVals[11]=200;
+        commActs[11] = "MMS";
+        commPos[11] = 21;
+        commVals[11] = 200;
         comm[12] = "Take a trip around Avengers Base – advance token to Avengers Base";
-        commActs[12]="M";
-        commPos[12]=30;
+        commActs[12] = "M";
+        commPos[12] = 30;
         comm[13] = "You are Bruce Wayne's new secretary – pay each player $50";
-        commActs[13]="P$";
-        commVals[13]=-50;
+        commActs[13] = "P$";
+        commVals[13] = -50;
         comm[14] = "Krypton blew up  – Pay each player $75";
-        commActs[14]="P$";
-        commVals[14]=-75;
+        commActs[14] = "P$";
+        commVals[14] = -75;
         comm[15] = "You have saved the world for now - collect $100";
-        commActs[15]="$";
-        commVals[15]=100;
-      }
+        commActs[15] = "$";
+        commVals[15] = 100;
+    }
 
-  }
+}

@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
  * @author Harsh Gupta and Karmit Patel
  */
 public class Canada_Data {
+
     //Initialize variables
     Color purple = new Color(75, 0, 130);
     //Add player pieces
@@ -30,10 +31,10 @@ public class Canada_Data {
     //Arrays for chance, comm chest and properties
     public String chance[] = new String[16];
     public String chanceActs[] = new String[16];
-    public int chanceVals[] = new int[16],chancePos[]=new int[16];
+    public int chanceVals[] = new int[16], chancePos[] = new int[16];
     public String comm[] = new String[16];
     public String commActs[] = new String[16];
-    public int commVals[] = new int[16],commPos[]=new int[16];
+    public int commVals[] = new int[16], commPos[] = new int[16];
     public Canada_Data property[] = new Canada_Data[36];
     public boolean buyable;
     public Color colour;
@@ -325,7 +326,7 @@ public class Canada_Data {
         property[26].cardIcon = new ImageIcon("Board Pictures/Canada/Edm Image.jpg");
         property[26].type = "N";
 
-        property[27].propName="Go to Jail";
+        property[27].propName = "Go to Jail";
         property[27].buyable = false;
         property[27].colour = Color.GRAY;
         property[27].type = "GTJ";
@@ -432,7 +433,7 @@ public class Canada_Data {
         chance[0] = "Advance to Go (Collect $200) ";
         chanceActs[0] = "MSS";
         chanceVals[0] = 200;
-        chancePos[0]=36;
+        chancePos[0] = 36;
         chance[1] = "Bank error in your favor – collect $75 ";
         chanceActs[1] = "$";
         chanceVals[1] = 75;
@@ -482,7 +483,7 @@ public class Canada_Data {
         comm[0] = "Advance to Go (Collect $200)";
         commActs[0] = "MSS";
         commVals[0] = 200;
-        commPos[0]=36;
+        commPos[0] = 36;
         comm[1] = "Advance to Windsor";
         commActs[1] = "M";
         commPos[1] = 13;
@@ -495,7 +496,7 @@ public class Canada_Data {
         comm[4] = "Advance to St. John's – if you pass Go, collect $200";
         commActs[4] = "MMS";
         commPos[4] = 19;
-        commVals[4]=200;
+        commVals[4] = 200;
         comm[5] = "Bank pays you dividend of $50";
         commActs[5] = "$";
         commVals[5] = 50;
@@ -517,7 +518,7 @@ public class Canada_Data {
         comm[11] = "Take a trip to Timmies – if you pass Go collect $200";
         commActs[11] = "MMS";
         commVals[11] = 200;
-        commPos[11]=3;
+        commPos[11] = 3;
         comm[12] = "Take a walk on the Niagara Falls – advance token to Niagara Falls";
         commActs[12] = "M";
         commVals[12] = 15;
@@ -532,6 +533,3 @@ public class Canada_Data {
         commVals[15] = 100;
     }
 }
-
-
-

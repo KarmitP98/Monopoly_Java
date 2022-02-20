@@ -20,7 +20,8 @@ public class Card extends javax.swing.JFrame {
     String title, price, baseRent, rent1, rent2, rent3, rentHotel, mortgage, house, hotel;
     Color background;
     ImageIcon ic;
-    String theme;    
+    String theme;
+
     public Card(Color bg, ImageIcon icon, int index, Properties_Data p) {
         this.background = bg;
         this.ic = icon;
@@ -47,9 +48,9 @@ public class Card extends javax.swing.JFrame {
             hotel = "Hotel costs $" + ((p.prop[index].priceHouse * 1.5) + 50);
         }
         initComponents();
-        if(Board.propOwned[index]){
+        if (Board.propOwned[index]) {
             lblColor.setBackground(Board.colorPalette[Board.propOwner[index]]);
-        }else{
+        } else {
             lblColor.setBackground(Color.darkGray);
         }
         this.setLocationRelativeTo(null);
@@ -59,7 +60,6 @@ public class Card extends javax.swing.JFrame {
 //      {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //      }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -10,16 +10,15 @@ import java.util.Collections;
 
 /**
  *
- * @author Haard Trivedi
- * Thursday October 27, 2016
+ * @author Haard Trivedi Thursday October 27, 2016
  */
 public class NickNames {
 
-   public String[] first = new String[31];
+    public String[] first = new String[31];
     public String[] last = new String[31];
-    public ArrayList <String> firsti=new ArrayList(),lasti=new ArrayList(),namei=new ArrayList();
+    public ArrayList<String> firsti = new ArrayList(), lasti = new ArrayList(), namei = new ArrayList();
     public String name;
-    
+
     public void listName() {
         first[0] = "Master";
         first[1] = "Captain";
@@ -86,16 +85,16 @@ public class NickNames {
         last[28] = "Big";
         last[29] = "Pants";
         last[30] = "Chick";
-        for(int i=0;i<=30;i++)
-        {
+        for (int i = 0; i <= 30; i++) {
             firsti.add(first[i]);
             lasti.add(last[i]);
         }
         getName();
     }
+
     public void getName() {
         Collections.shuffle(firsti);
         Collections.shuffle(lasti);
-        name = firsti.get(12)+" "+(lasti.get(19));
+        name = firsti.get(12) + " " + (lasti.get(19));
     }
 }

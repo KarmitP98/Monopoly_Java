@@ -30,30 +30,31 @@ public class GameOver extends javax.swing.JFrame {
     int counter = 0;
     Timer t;
     Board board;
-    int index = 0;   
+    int index = 0;
     int players = 4;
     int moneys[] = new int[4];
+
     public GameOver(/*Board bd*/) {
 //        this.board = bd;
         initComponents();
-        moneys[0]=500;
-        moneys[1]=1000;
-        moneys[2]=2000;
-        moneys[3]=3000;   
+        moneys[0] = 500;
+        moneys[1] = 1000;
+        moneys[2] = 2000;
+        moneys[3] = 3000;
         AddProgressBars(moneys[0]);
-             
+
     }
-   
+
     public void AddProgressBars(int upperLimit) {
         final int u = upperLimit;
-        JPanel pane = new JPanel(new BorderLayout());        
+        JPanel pane = new JPanel(new BorderLayout());
         final JProgressBar prog = new JProgressBar(JProgressBar.VERTICAL, 0, upperLimit);
         prog.setPreferredSize(new Dimension(20, 260));
         prog.setValue(counter);
         final JLabel lblMoney = new JLabel(String.valueOf(u));
         lblMoney.setFont(new Font("Showcard Gothic", 0, 36));
-        JLabel player = new JLabel("PLAYER "+String.valueOf(index+1));
-        player.setFont(new Font("Showcard Gothic", 0, 18));        
+        JLabel player = new JLabel("PLAYER " + String.valueOf(index + 1));
+        player.setFont(new Font("Showcard Gothic", 0, 18));
         pane.add(player, BorderLayout.NORTH);
         pane.add(prog, BorderLayout.WEST);
         pane.add(lblMoney, BorderLayout.EAST);
@@ -66,9 +67,9 @@ public class GameOver extends javax.swing.JFrame {
                 final int c = counter;
                 if (counter == u) {
                     t.stop();
-                    counter=0;
+                    counter = 0;
                     index++;
-                    if(index <players){
+                    if (index < players) {
                         AddProgressBars(moneys[index]);
                     }
                 }
@@ -79,7 +80,7 @@ public class GameOver extends javax.swing.JFrame {
                 counter++;
             }
         });
-        t.start();        
+        t.start();
     }
 
     /**

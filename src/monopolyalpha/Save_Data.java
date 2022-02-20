@@ -29,7 +29,8 @@ public class Save_Data {
     public boolean[] propOwned = new boolean[36], propBuyable = new boolean[36],
             Game = new boolean[4], housable = new boolean[14], propH = new boolean[36];
     public String log;
-    public Save_Data() {      
+
+    public Save_Data() {
         this.theme = Board.theme;
         this.players = Board.players;
         this.dice = Board.dice;
