@@ -5,6 +5,9 @@
  */
 package monopolyalpha;
 
+import Beans.SaveBean;
+import monopolyalpha.forms.Board;
+import monopolyalpha.forms.PlayerSelect;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import java.io.File;
@@ -23,7 +26,7 @@ public class Savetest {
         if (!f.exists()) {
             f.mkdir();
         }
-        Save_Data save = new Save_Data();
+        SaveBean save = new SaveBean();
         XStream xstream = new XStream(new DomDriver());
         String xml = xstream.toXML(save);
 //        System.out.println(xml);
@@ -49,7 +52,7 @@ public class Savetest {
 
     public static void Load(String filename) {
         XStream xstream = new XStream(new DomDriver());
-        Save_Data save = (Save_Data) xstream.fromXML(new File(filename));
+        SaveBean save = (SaveBean) xstream.fromXML(new File(filename));
         Board board;
         Board.theme = save.theme;
         Board.players = save.players;
@@ -91,14 +94,14 @@ public class Savetest {
     }
 
     public static void main(String[] args) {
-//        Save_Data sg = new Save_Data();
+//        SaveBean sg = new SaveBean();
 //        for (int i = 0; i < sg.names.length; i++) {
 //            sg.names[i] = "Hello";
 //        }
 //        for (int i = 0; i < sg.props.length; i++) {
 //            sg.props[i] = i + 1;
 //        }       
-        Board board = InitTest.board;
+        Board board = PlayerSelect.board;
         XStream xstream = new XStream(new DomDriver());
         String xml = xstream.toXML(board);
         FileOutputStream fos = null;

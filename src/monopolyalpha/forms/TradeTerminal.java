@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package monopolyalpha;
+package monopolyalpha.forms;
 
 import java.awt.Dimension;
 import java.awt.Font;
@@ -18,12 +18,17 @@ import javax.swing.border.LineBorder;
  *
  * @author Harsh
  */
-public class TradeForm extends javax.swing.JFrame {
+public class TradeTerminal extends javax.swing.JFrame {
 
     /**
-     * Creates new form TradeForm
+     * Creates new form TradeTerminal
      */
-    public JCheckBox[] checkboxes1, checkboxes2;
+    public JCheckBox[] checkboxes1,
+
+    /**
+     * Creates new form TradeTerminal
+     */
+    checkboxes2;
     Board board;
     JPanel[] others;
     ArrayList<Integer> from = new ArrayList();
@@ -31,7 +36,7 @@ public class TradeForm extends javax.swing.JFrame {
     public int tradeToInd;
     public int tradeTo = -1;
 
-    public TradeForm(Board bd) {
+    public TradeTerminal(Board bd) {
         this.board = bd;
         initComponents();
         paneCur.setPreferredSize(new Dimension(paneCur.getWidth(), paneOthers.getHeight()));
@@ -466,13 +471,13 @@ public class TradeForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TradeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TradeTerminal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TradeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TradeTerminal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TradeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TradeTerminal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TradeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TradeTerminal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -480,6 +485,14 @@ public class TradeForm extends javax.swing.JFrame {
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
 //                new TradeForm().setVisible(true);
+//            }
+//        });
+        //</editor-fold>
+
+        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new TradeTerminal().setVisible(true);
 //            }
 //        });
     }

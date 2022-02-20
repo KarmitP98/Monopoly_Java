@@ -3,27 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package monopolyalpha;
+package monopolyalpha.forms;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JCheckBox;
-import monopolyalpha.Properties_Data;
+import Beans.PropertiesBean;
+import Beans.PropertiesBean;
 
 /**
  *
  * @author karmi
  */
-public class HouseFrm extends javax.swing.JFrame {
+public class EditHouse extends javax.swing.JFrame {
 
     int pl, turn, j = -1, money = 0, x = 0, y = 0;
     Board bd;
-    Properties_Data pd = new Properties_Data();
+    PropertiesBean pd = new PropertiesBean();
     public int[] propOwner = new int[36], nums = new int[36], sel = new int[36], propHouse = new int[36];
     public boolean[] propH = new boolean[36];
     public JCheckBox[] props = new JCheckBox[100];
 
-    public HouseFrm(int[] propOwner, boolean[] propH, int turn, int[] propHouse, Board board) {
+    public EditHouse(int[] propOwner, boolean[] propH, int turn, int[] propHouse, Board board) {
         bd = board;
         pl = bd.players;
         this.turn = turn;
@@ -264,21 +265,22 @@ public class HouseFrm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HouseFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditHouse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HouseFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditHouse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HouseFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditHouse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HouseFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditHouse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new StartScreenfrm().setVisible(true);
+                new Dashboard().setVisible(true);
             }
         });
     }

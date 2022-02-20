@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package monopolyalpha;
+package monopolyalpha.forms;
 
+import monopolyalpha.Dialog.Help;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -44,11 +45,11 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
-import monopolyalpha.Canada_Data;
+import Beans.CanadaBean;
 import monopolyalpha.Dice;
-import monopolyalpha.Generic_Data;
-import monopolyalpha.Properties_Data;
-import monopolyalpha.SuperHero_Data;
+import Beans.GenericBean;
+import Beans.PropertiesBean;
+import Beans.SuperHeroBean;
 import monopolyalpha.jackpotMoney;
 
 /**
@@ -69,7 +70,7 @@ public class Board extends javax.swing.JFrame {
     public static ImageIcon[] icon = new ImageIcon[4];
     public String[] propName = new String[36], propType = new String[36];
     public Dice di = new Dice();
-    public Properties_Data pd = new Properties_Data();
+    public PropertiesBean pd = new PropertiesBean();
 //    Color transparent50 = new Color(0, 0, 0, 64);
     public static Color[] colorPalette = new Color[4];
     public static ImageIcon piece;
@@ -80,13 +81,13 @@ public class Board extends javax.swing.JFrame {
     public static JLabel[][] boxes = new JLabel[4][37];
     public JPanel[] boxPanes = new JPanel[36];
     public static JLabel[] plnames = new JLabel[4], plicons = new JLabel[4], plmoney = new JLabel[4], houses = new JLabel[36], buyStatus = new JLabel[36], plMC = new JLabel[4], cardInfo = new JLabel[36];
-    Card c;
+    PropertyCard c;
     public JButton[] plHouse = new JButton[4];
     public static Image image;
     public static Timer moveTimer, timer, moneyTimer, timerC, messDisplay;
-    Canada_Data cd = new Canada_Data();
-    SuperHero_Data sd = new SuperHero_Data();
-    Generic_Data gd = new Generic_Data();
+    CanadaBean cd = new CanadaBean();
+    SuperHeroBean sd = new SuperHeroBean();
+    GenericBean gd = new GenericBean();
     public ArrayList mess = new ArrayList();
     public File f;
     public AudioInputStream audioIn = null;
@@ -100,7 +101,7 @@ public class Board extends javax.swing.JFrame {
         this.players = playerCount;
         if (!load) {
             ThemeSelect ts = new ThemeSelect();
-            InitTest it = new InitTest();
+            PlayerSelect it = new PlayerSelect();
             datatransfer(it);//no need to load when load game
             setupData();
             this.theme = ts.theme;
@@ -147,7 +148,7 @@ public class Board extends javax.swing.JFrame {
                     System.exit(0);
                 }
                 if (PromptResult == 2) {
-                    new Save_Manager().setVisible(true);
+                    new SaveManager().setVisible(true);
                 }
             }
         });
@@ -475,7 +476,7 @@ public class Board extends javax.swing.JFrame {
             plHouse[i].addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    new HouseFrm(propOwner, propH, turn, propHouse, board).setVisible(true);
+                    new EditHouse(propOwner, propH, turn, propHouse, board).setVisible(true);
                 }
             });
             board.dispose();
@@ -541,7 +542,7 @@ public class Board extends javax.swing.JFrame {
             plHouse[i].addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    new HouseFrm(propOwner, propH, turn, propHouse, board).setVisible(true);
+                    new EditHouse(propOwner, propH, turn, propHouse, board).setVisible(true);
                 }
             });
             board.dispose();
@@ -561,7 +562,7 @@ public class Board extends javax.swing.JFrame {
         houseImg[4] = new ImageIcon("Icons/Miscellaneous/Property Icons/Hotel.png");
     }
 
-    public void datatransfer(InitTest it) {
+    public void datatransfer(PlayerSelect it) {
 //        it.setplayers();
 //        this.players=it.sldPlayer.getValue();
 //        this.players = it.pCount;  //This is the only errror it takes 2 as default value instead of "pCount" from Init Test Fix it if u can
@@ -853,7 +854,7 @@ public class Board extends javax.swing.JFrame {
         if (clicked == false) {
             clicked = true;
             counter = 0;
-            c = new Card(pd.prop[index].colour, pd.prop[index].cardIcon, index, pd);
+            c = new PropertyCard(pd.prop[index].colour, pd.prop[index].cardIcon, index, pd);
             c.setVisible(true);
             timerC = new Timer(1000, new ActionListener() {
                 @Override
@@ -958,13 +959,13 @@ public class Board extends javax.swing.JFrame {
                 } else {
                     btnReBuy.setText("Sell");
                     btnReBuy.setEnabled(true);
-                    BuyScreen buy = new BuyScreen(new Card(pd.prop[cpos[turn]].colour, pd.prop[cpos[turn]].cardIcon, cpos[turn], pd), "sell", this);
+                    BuyScreen buy = new BuyScreen(new PropertyCard(pd.prop[cpos[turn]].colour, pd.prop[cpos[turn]].cardIcon, cpos[turn], pd), "sell", this);
                     buy.setVisible(true);
                 }
             } else {
                 btnReBuy.setText("Buy");
                 btnReBuy.setEnabled(true);
-                BuyScreen buy = new BuyScreen(new Card(pd.prop[cpos[turn]].colour, pd.prop[cpos[turn]].cardIcon, cpos[turn], pd), "buy", this);
+                BuyScreen buy = new BuyScreen(new PropertyCard(pd.prop[cpos[turn]].colour, pd.prop[cpos[turn]].cardIcon, cpos[turn], pd), "buy", this);
                 buy.setVisible(true);
             }
         } else {
@@ -995,7 +996,7 @@ public class Board extends javax.swing.JFrame {
                 System.out.println("Chances");
                 gameOver(turn);
             } else if (money[turn] < 0) {
-                TradeForm tradeForm = new TradeForm(this);
+                TradeTerminal tradeForm = new TradeTerminal(this);
                 tradeForm.setVisible(true);
             } else if (tot < 0) {
                 System.out.println("Money");
@@ -4014,18 +4015,18 @@ public class Board extends javax.swing.JFrame {
             System.exit(0);
         }
         if (PromptResult == 2) {
-            new Save_Manager().setVisible(true);
+            new SaveManager().setVisible(true);
         }
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnReBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReBuyActionPerformed
         // TODO add your handling code here:
         if (btnReBuy.getText().equals("Buy")) {
-            BuyScreen buy = new BuyScreen(new Card(pd.prop[cpos[turn]].colour, pd.prop[cpos[turn]].cardIcon, cpos[turn], pd), "buy", this);
+            BuyScreen buy = new BuyScreen(new PropertyCard(pd.prop[cpos[turn]].colour, pd.prop[cpos[turn]].cardIcon, cpos[turn], pd), "buy", this);
             buy.setVisible(true);
         }
         if (btnReBuy.getText().equals("Sell")) {
-            BuyScreen buy = new BuyScreen(new Card(pd.prop[cpos[turn]].colour, pd.prop[cpos[turn]].cardIcon, cpos[turn], pd), "sell", this);
+            BuyScreen buy = new BuyScreen(new PropertyCard(pd.prop[cpos[turn]].colour, pd.prop[cpos[turn]].cardIcon, cpos[turn], pd), "sell", this);
             buy.setVisible(true);
         }
 
@@ -4033,7 +4034,7 @@ public class Board extends javax.swing.JFrame {
 
     private void btnTradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTradeActionPerformed
         // TODO add your handling code here:       
-        new TradeForm(this).setVisible(true);
+        new TradeTerminal(this).setVisible(true);
     }//GEN-LAST:event_btnTradeActionPerformed
 
     private void lblHoverB7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHoverB7MouseEntered
@@ -4297,7 +4298,7 @@ public class Board extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new StartScreenfrm().setVisible(true);
+                new Dashboard().setVisible(true);
             }
         });
     }

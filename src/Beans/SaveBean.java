@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package monopolyalpha;
+package Beans;
 
+import monopolyalpha.forms.Board;
+import monopolyalpha.forms.PlayerSelect;
 import java.awt.Color;
 import javax.swing.text.StyledDocument;
 
@@ -12,9 +14,9 @@ import javax.swing.text.StyledDocument;
  *
  * @author Harsh
  */
-public class Save_Data {
+public class SaveBean {
 
-//    private Board Board = InitTest.Board;
+//    private Board Board = PlayerSelect.Board;
     public int players, dice, chance, roll, turn = 0, count = 0, EGS, counter = 0;
     public String theme;
     public int[] numprop = new int[4], cpos = new int[4], bonus = new int[4],
@@ -24,13 +26,13 @@ public class Save_Data {
     public int[] money = new int[4];
     public String[] name = new String[4];
     public String[] iconpaths = new String[4];
-    Color[] colorPalette = new Color[4];
+    public Color[] colorPalette = new Color[4];
     public boolean snake = false, bail = false;
     public boolean[] propOwned = new boolean[36], propBuyable = new boolean[36],
             Game = new boolean[4], housable = new boolean[14], propH = new boolean[36];
     public String log;
 
-    public Save_Data() {
+    public SaveBean() {
         this.theme = Board.theme;
         this.players = Board.players;
         this.dice = Board.dice;
@@ -53,7 +55,7 @@ public class Save_Data {
         this.money = Board.money;
         this.name = Board.name;
         for (int i = 0; i < iconpaths.length; i++) {
-            if (InitTest.board.icon[i] != null) {
+            if (PlayerSelect.board.icon[i] != null) {
                 this.iconpaths[i] = Board.icon[i].toString();
             }
         }

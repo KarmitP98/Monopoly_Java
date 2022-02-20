@@ -2,21 +2,22 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package monopolyalpha;
+package monopolyalpha.Dialog;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import monopolyalpha.forms.Dashboard;
 
 /**
  *
  * @author 596354
  */
-public class AboutDialogfrm extends javax.swing.JFrame {
+public class AboutDialog extends javax.swing.JFrame {
 
     /**
      * Creates new form AboutDialogfrm
      */
-    public AboutDialogfrm() {
+    public AboutDialog() {
         initComponents();
         this.setLocationRelativeTo(null);
 
@@ -88,7 +89,7 @@ public class AboutDialogfrm extends javax.swing.JFrame {
         this.dispose();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StartScreenfrm().setVisible(true);
+                new Dashboard().setVisible(true);
             }
         });
 
@@ -111,20 +112,21 @@ public class AboutDialogfrm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AboutDialogfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AboutDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AboutDialogfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AboutDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AboutDialogfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AboutDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AboutDialogfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AboutDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AboutDialogfrm().setVisible(true);
+                new AboutDialog().setVisible(true);
             }
         });
     }

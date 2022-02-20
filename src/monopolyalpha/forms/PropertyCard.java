@@ -2,35 +2,81 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package monopolyalpha;
+package monopolyalpha.forms;
 
 import java.awt.Color;
 import javax.swing.ImageIcon;
-import monopolyalpha.Properties_Data;
+import Beans.PropertiesBean;
+import Beans.PropertiesBean;
 
 /**
  *
  * @author 850110
  */
-public class Card extends javax.swing.JFrame {
+public class PropertyCard extends javax.swing.JFrame {
 
     /**
-     * Creates new form Card
+     * Creates new form PropertyCard
      */
     //Initialize variables for display on card
-    String title, price, baseRent, rent1, rent2, rent3, rentHotel, mortgage, house, hotel;
+    String title,
+
+    /**
+     * Creates new form PropertyCard
+     */
+    price, 
+
+    /**
+     * Creates new form PropertyCard
+     */
+    baseRent, 
+
+    /**
+     * Creates new form PropertyCard
+     */
+    rent1, 
+
+    /**
+     * Creates new form PropertyCard
+     */
+    rent2, 
+
+    /**
+     * Creates new form PropertyCard
+     */
+    rent3, 
+
+    /**
+     * Creates new form PropertyCard
+     */
+    rentHotel, 
+
+    /**
+     * Creates new form PropertyCard
+     */
+    mortgage, 
+
+    /**
+     * Creates new form PropertyCard
+     */
+    house, 
+
+    /**
+     * Creates new form PropertyCard
+     */
+    hotel;
     Color background;
     ImageIcon ic;
     String theme;
 
-    public Card(Color bg, ImageIcon icon, int index, Properties_Data p) {
+    public PropertyCard(Color bg, ImageIcon icon, int index, PropertiesBean p) {
         this.background = bg;
         this.ic = icon;
         this.theme = Board.theme;
         p.GetProp(theme);
         title = p.prop[index].name;
         price = "Price $" + p.prop[index].price;
-        //System.out.println("Card- Colour:" + bg + "Name: " + p.prop[index].name + "Price:" + price + "Index:" + index);
+        //System.out.println("PropertyCard- Colour:" + bg + "Name: " + p.prop[index].name + "Price:" + price + "Index:" + index);
         if (p.prop[index].rent2 == 0) {
             //Get rent for house
             rent1 = p.prop[index].desc1;
@@ -38,7 +84,7 @@ public class Card extends javax.swing.JFrame {
             //House mortgage value
             mortgage = "Mortgage value $" + p.prop[index].price / 2;
         } else if (p.prop[index].rent2 != 0) {
-            //Get and display values from Properties_Data                                                                  
+            //Get and display values from PropertiesBean                                                                  
             baseRent = "RENT $" + p.prop[index].rent1;
             rent1 = "With 1 House $" + p.prop[index].rent2;
             rent2 = "With 2 House $" + p.prop[index].rent3;
@@ -57,7 +103,7 @@ public class Card extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
-//    Card(Color bg, ImageIcon i, int index)
+//    PropertyCard(Color bg, ImageIcon i, int index)
 //      {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //      }
@@ -252,20 +298,21 @@ public class Card extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Card.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PropertyCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Card.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PropertyCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Card.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PropertyCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Card.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PropertyCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StartScreenfrm().setVisible(true);
+                new Dashboard().setVisible(true);
             }
         });
     }

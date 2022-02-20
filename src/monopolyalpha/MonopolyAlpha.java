@@ -5,6 +5,8 @@
  */
 package monopolyalpha;
 
+import monopolyalpha.forms.Dashboard;
+
 /**
  *
  * @author Harsh
@@ -21,7 +23,7 @@ public class MonopolyAlpha {
 //       MusicPlayer.play();        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StartScreenfrm().setVisible(true);
+                new Dashboard().setVisible(true);
             }
         });
 

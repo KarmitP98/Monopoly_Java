@@ -2,8 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package monopolyalpha;
+package monopolyalpha.forms;
 
+import monopolyalpha.Dialog.AboutDialog;
+import monopolyalpha.Dialog.Help;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -15,17 +17,22 @@ import javax.swing.ImageIcon;
  *
  * @author 714449
  */
-public class StartScreenfrm extends javax.swing.JFrame {
+public class Dashboard extends javax.swing.JFrame {
 
     /**
-     * Creates new form StartScreenfrm
+     * Creates new form Dashboard
      */
-    public int w, h;
+    public int w,
+
+    /**
+     * Creates new form Dashboard
+     */
+    h;
     public ImageIcon ic = new ImageIcon("Icons/Miscellaneous/buttons/BG.png");
     public Image ig;
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-    public StartScreenfrm() {
+    public Dashboard() {
         initComponents();
 
         this.setExtendedState(MAXIMIZED_BOTH);
@@ -145,7 +152,7 @@ public class StartScreenfrm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoadGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadGameActionPerformed
-        new Save_Manager().setVisible(true);
+        new SaveManager().setVisible(true);
     }//GEN-LAST:event_btnLoadGameActionPerformed
 
     private void btnNewGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewGameActionPerformed
@@ -162,7 +169,7 @@ public class StartScreenfrm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutActionPerformed
-        new AboutDialogfrm().setVisible(true);
+        new AboutDialog().setVisible(true);
     }//GEN-LAST:event_btnAboutActionPerformed
 
     /**
@@ -182,20 +189,21 @@ public class StartScreenfrm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(StartScreenfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(StartScreenfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(StartScreenfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(StartScreenfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StartScreenfrm().setVisible(true);
+                new Dashboard().setVisible(true);
             }
         });
     }

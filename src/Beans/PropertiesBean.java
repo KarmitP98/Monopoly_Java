@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package monopolyalpha;
+package Beans;
 
+import monopolyalpha.forms.Board;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
@@ -12,7 +13,7 @@ import javax.swing.ImageIcon;
  *
  * @author Harsh, Karmit
  */
-public class Properties_Data {
+public class PropertiesBean {
 
     public int price, priceHouse, rent1, rent2, rent3, rent4, rentH;
     public boolean owned, buyable;
@@ -29,9 +30,9 @@ public class Properties_Data {
     public String commActs[] = new String[16];
     public int commVals[] = new int[16], commPos[] = new int[16];
     public String name;
-    Properties_Data prop[] = new Properties_Data[36];
+    public PropertiesBean prop[] = new PropertiesBean[36];
 
-    public Properties_Data() {
+    public PropertiesBean() {
         this.thm = Board.theme;
     }
 
@@ -39,7 +40,7 @@ public class Properties_Data {
         System.out.println(thm);
         switch (thm) {
             case "Canada": {
-                Canada_Data can = new Canada_Data();
+                CanadaBean can = new CanadaBean();
                 can.setProp();
                 can.getCards();
                 //Chance and community stuff                   
@@ -52,7 +53,7 @@ public class Properties_Data {
                 commVals = can.commVals.clone();
                 commPos = can.commPos.clone();
                 for (int i = 0; i < 36; i++) {
-                    prop[i] = new Properties_Data();
+                    prop[i] = new PropertiesBean();
                     prop[i].name = can.property[i].propName;
                     prop[i].price = can.property[i].price;
                     prop[i].rent1 = can.property[i].rent1;
@@ -75,7 +76,7 @@ public class Properties_Data {
                 break;
             }
             case "Generic": {
-                Generic_Data gen = new Generic_Data();//change to generic
+                GenericBean gen = new GenericBean();//change to generic
                 gen.setProp();//same as above
 //                 chance = gen.chance.clone();
 //                chanceActs = gen.chanceActs.clone();
@@ -86,7 +87,7 @@ public class Properties_Data {
 //                commVals = gen.commVals.clone();
 //                commPos = gen.commPos.clone();
                 for (int i = 0; i < prop.length; i++) {
-                    prop[i] = new Properties_Data();
+                    prop[i] = new PropertiesBean();
                     prop[i].name = gen.property[i].propName;
                     prop[i].price = gen.property[i].price;
                     prop[i].rent1 = gen.property[i].rent1;
@@ -107,7 +108,7 @@ public class Properties_Data {
                 break;
             }
             case "Super": {
-                SuperHero_Data sup = new SuperHero_Data();//Change to super
+                SuperHeroBean sup = new SuperHeroBean();//Change to super
                 sup.setProp();
                 sup.getCards();//same as above.
                 //Chance and community stuff                   
@@ -120,7 +121,7 @@ public class Properties_Data {
                 commVals = sup.commVals.clone();
                 commPos = sup.commPos.clone();
                 for (int i = 0; i < prop.length; i++) {
-                    prop[i] = new Properties_Data();
+                    prop[i] = new PropertiesBean();
                     prop[i].name = sup.property[i].propName;
                     prop[i].price = sup.property[i].price;
                     prop[i].rent1 = sup.property[i].rent1;

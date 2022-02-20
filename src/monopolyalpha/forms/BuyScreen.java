@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package monopolyalpha;
+package monopolyalpha.forms;
 
 import java.awt.Color;
 
@@ -22,7 +22,7 @@ public class BuyScreen extends javax.swing.JFrame {
     boolean bought = false, clicked = false;
     Board board;
 
-    public BuyScreen(Card card, String button, Board bd) {
+    public BuyScreen(PropertyCard card, String button, Board bd) {
         initComponents();
         //Add componenets into frame and set visuals
         paneCard.add(card.getComponent(0));

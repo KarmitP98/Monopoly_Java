@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package monopolyalpha;
+package monopolyalpha.forms;
 
 import java.awt.Color;
 import javax.swing.ImageIcon;
-import monopolyalpha.Canada_Data;
-import monopolyalpha.SuperHero_Data;
+import Beans.CanadaBean;
+import Beans.CanadaBean;
+import Beans.SuperHeroBean;
+import Beans.SuperHeroBean;
 
 /**
  *
@@ -36,7 +38,7 @@ public class ThemeSelect extends javax.swing.JFrame {
     public void goNext() {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InitTest().setVisible(true);
+                new PlayerSelect().setVisible(true);
             }
         });
         this.dispose();
@@ -138,29 +140,29 @@ public class ThemeSelect extends javax.swing.JFrame {
     private void btnCanadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCanadaActionPerformed
         // TODO add your handling code here:
         canth();
-        new StartScreenfrm().setVisible(false);
+        new Dashboard().setVisible(false);
         this.setVisible(false);
         dispose();
-        new StartScreenfrm().dispose();
-        new InitTest().setVisible(true);
+        new Dashboard().dispose();
+        new PlayerSelect().setVisible(true);
 //        goNext();
     }//GEN-LAST:event_btnCanadaActionPerformed
 
     private void btnSuperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuperActionPerformed
         // TODO add your handling code here:
         supth();
-        new StartScreenfrm().setVisible(false);
+        new Dashboard().setVisible(false);
         this.setVisible(false);
-        new InitTest().setVisible(true);
+        new PlayerSelect().setVisible(true);
 //        goNext();
     }//GEN-LAST:event_btnSuperActionPerformed
 
     private void btnGenericActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenericActionPerformed
         // TODO add your handling code here:
         genth();
-        new StartScreenfrm().setVisible(false);
+        new Dashboard().setVisible(false);
         this.setVisible(false);
-        new InitTest().setVisible(true);
+        new PlayerSelect().setVisible(true);
     }//GEN-LAST:event_btnGenericActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_backActionPerformed
@@ -168,14 +170,14 @@ public class ThemeSelect extends javax.swing.JFrame {
         this.setVisible(false);
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StartScreenfrm().setVisible(true);
+                new Dashboard().setVisible(true);
             }
         });
     }//GEN-LAST:event_backActionPerformed
 
     public void supth() {
         theme = "Super";
-        SuperHero_Data sup = new SuperHero_Data();
+        SuperHeroBean sup = new SuperHeroBean();
         piece1 = "Dog";
         piece2 = "Ship";
         piece3 = "Iron";
@@ -216,7 +218,7 @@ public class ThemeSelect extends javax.swing.JFrame {
 
     public void canth() {
         theme = "Canada";
-        Canada_Data can = new Canada_Data();
+        CanadaBean can = new CanadaBean();
         piece1 = "Mic";
         piece2 = "Carty";
         piece3 = "Shoe";
@@ -265,7 +267,7 @@ public class ThemeSelect extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StartScreenfrm().setVisible(true);
+                new Dashboard().setVisible(true);
             }
         });
     }
